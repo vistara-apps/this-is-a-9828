@@ -40,6 +40,16 @@ const Header = ({ activeTab, setActiveTab, userStats }) => {
         >
           Performance
         </button>
+        <button
+          onClick={() => setActiveTab('social')}
+          className={`flex-1 py-2 px-3 rounded-md text-sm font-medium transition-all duration-base ${
+            activeTab === 'social'
+              ? 'bg-primary text-white'
+              : 'text-text-secondary hover:text-text-primary'
+          }`}
+        >
+          Social
+        </button>
       </nav>
 
       {/* Quick Stats */}
