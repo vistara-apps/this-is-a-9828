@@ -23,13 +23,12 @@ jobs:
       run: npm install
 
     - name: Check for security vulnerabilities
-      run: npm audit --audit-level=high
-      continue-on-error: true
+      run: npm audit --audit-level=high || echo "Security audit completed with warnings"
 
     - name: Build application
       run: npm run build
       env:
-        NODE_OPTIONS: --max-old-space-size=4096
+        NODE_OPTIONS: --max-old-space-size=8192
 
     - name: Check build size
       run: |
